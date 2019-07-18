@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Jane Tetris</h1>
-
+<p>This app will help us park our cars in the Jane Parking lot.</p>
+<%=image_tag("image.jpg")%>
+<br>
 <table>
   <thead>
     <tr>
@@ -11,7 +13,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+<br>
   <tbody>
     <% @cars.each do |car| %>
       <tr>
@@ -20,7 +22,7 @@
         <td><%= car.year %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,5 @@
 
 <br>
 
-<%= link_to 'I just parked', new_car_path %>
+
+<%= link_to 'Park New Car', new_car_path %>
